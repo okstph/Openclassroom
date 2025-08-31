@@ -51,7 +51,8 @@ Ce dépôt contient les projets réalisés durant la formation Data Analyst d'Op
 * Réaliser une ACP
 * Utiliser un algorithme de clustering de type Kmeans
 
-Projet 8 - Prédisez la demande en électricité
+
+## Projet 7 - Prédisez la demande en électricité
 ### Objectifs
 * Nettoyer et désaisonnaliser les données de consommation électriques avec Pandas
 * Faire une prévision da la consommation électrique avec les méthodes Holt-Winders et SARIMA
