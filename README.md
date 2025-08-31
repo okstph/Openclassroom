@@ -51,17 +51,10 @@ Ce dépôt contient les projets réalisés durant la formation Data Analyst d'Op
 * Réaliser une ACP
 * Utiliser un algorithme de clustering de type Kmeans
 
-## Projet 7 - Effectuez une prédiction de revenus
-### Objectifs
-
-
-### Compétences cibles
-* Maîtriser les bases de la statistique inférentielle 
-* Maîtriser les bases des probabilités
-* Modéliser des données
-
 Projet 8 - Prédisez la demande en électricité
 ### Objectifs
+* Nettoyer et désaisonnaliser les données de consommation électriques avec Pandas
+* Faire une prévision da la consommation électrique avec les méthodes Holt-Winders et SARIMA
 
 ### Compétences cibles
 * Maitriser les méthodes de lissage et la méthode de Holt-Winters 
