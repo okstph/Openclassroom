@@ -30,8 +30,9 @@ Ce dépôt contient les projets réalisés durant la formation Data Analyst d'Op
 
 ## Projet 5 - Produisez une étude de marché
 ### Objectifs
-* A partir des données du projet 3, caractériser les pays via 
-
+* A partir des données du projet 3, caractériser les pays via la classification CAH avec R
+* 
+  
 ### Compétences cibles
 * Construire et lire un dendogramme
 * Interpréter une ACP
