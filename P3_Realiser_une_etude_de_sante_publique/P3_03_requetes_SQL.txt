@@ -1,0 +1,32 @@
+1) Les 10 pays ayant le plus haut ratio disponibilité alimentaire/habitant en termes de protéines (en kg) par habitant, puis en termes de kcal par habitant.
+SELECT pays,(SUM(dispo_prot)*1000/365) AS dispo_prot FROM dispo_alim
+GROUP BY pays
+ORDER BY dispo_prot DESC LIMIT 10;
+
+SELECT pays,(SUM(dispo_alim_kcal_p_j)) AS dispo_alim_kcal_p_j_ FROM dispo_alim
+GROUP BY pays
+ORDER BY dispo_alim_kcal_p_j_ DESC LIMIT 10;
+
+2) Pour l'année 2013, les 10 pays ayant le plus faible ratio disponibilité alimentaire/habitant en termes de protéines (en kg) par habitant.
+SELECT pays,(SUM(dispo_prot)*1000/365) AS dispo_prot FROM dispo_alim
+GROUP BY pays
+ORDER BY dispo_prot ASC LIMIT 10;
+
+3) La quantité totale (en kg) de produits perdus par pays en 2013.
+SELECT SUM(pertes)*1000000 AS PERTES_TOTALES FROM equilibre_prod
+
+4) Les 10 pays pour lesquels la proportion de personnes sous-alimentées est la plus forte.
+CREATE TABLE ratio AS SELECT sous_nutrition.pays,sous_nutrition.nb_personnes,sql_population.population 
+FROM sous_nutrition INNER JOIN sql_population 
+ON sql_population.pays = sous_nutrition.pays;
+
+SELECT pays, CAST(nb_personnes AS FLOAT) / CAST(population AS FLOAT)*100 AS r_ssalim from ratio 
+GROUP BY pays 
+ORDER BY r_ssalim DESC LIMIT 10;
+
+
+5) Les 10 produits pour lesquels le ratio Autres utilisations/Disponibilité intérieure est le plus élevé.
+SELECT produit, CAST(autres_utilisations AS FLOAT) / CAST(dispo_int AS FLOAT)*100 AS ratio_autre from equilibre_prod
+GROUP BY produit ORDER BY ratio_autre DESC LIMIT 10;
+
+	

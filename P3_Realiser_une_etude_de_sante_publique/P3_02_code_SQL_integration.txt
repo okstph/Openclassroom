@@ -1,0 +1,172 @@
+PRAGMA foreign_keys = 0;
+
+CREATE TABLE sqlitestudio_temp_table AS SELECT *
+                                          FROM sql_population;
+
+DROP TABLE sql_population;
+
+CREATE TABLE sql_population (
+    pays       VARCHAR (25) PRIMARY KEY,
+    code_pays  SMALLINT,
+    annee      DATE,
+    population INT
+);
+
+INSERT INTO sql_population (
+                               pays,
+                               code_pays,
+                               annee,
+                               population
+                           )
+                           SELECT pays,
+                                  code_pays,
+                                  annee,
+                                  population
+                             FROM sqlitestudio_temp_table;
+
+DROP TABLE sqlitestudio_temp_table;
+
+PRAGMA foreign_keys = 1;
+
+________________________________________________________________
+
+PRAGMA foreign_keys = 0;
+
+CREATE TABLE sqlitestudio_temp_table AS SELECT *
+                                          FROM dispo_alim;
+
+DROP TABLE dispo_alim;
+
+CREATE TABLE dispo_alim (
+    pays                VARCHAR (25),
+    code_pays           INT,
+    annee               DATE,
+    produit             VARCHAR (25),
+    code_produit        INT,
+    origin              VARCHAR (10),
+    dispo_alim_tonnes   DECIMAL,
+    dispo_alim_kcal_p_j DECIMAL,
+    dispo_mat_gr        DECIMAL,
+    dispo_prot          DECIMAL
+);
+
+INSERT INTO dispo_alim (
+                           pays,
+                           code_pays,
+                           annee,
+                           produit,
+                           code_produit,
+                           origin,
+                           dispo_alim_tonnes,
+                           dispo_alim_kcal_p_j,
+                           dispo_mat_gr,
+                           dispo_prot
+                       )
+                       SELECT pays,
+                              code_pays,
+                              annee,
+                              produit,
+                              code_produit,
+                              origin,
+                              dispo_alim_tonnes,
+                              dispo_alim_kcal_p_j,
+                              dispo_mat_gr,
+                              dispo_prot
+                         FROM sqlitestudio_temp_table;
+
+DROP TABLE sqlitestudio_temp_table;
+
+PRAGMA foreign_keys = 1;
+
+ALTER TABLE dispo_alim ADD COLUMN id;
+UPDATE dispo_alim SET id = pays||'-'||produit;
+
+__________________________________________________________________
+PRAGMA foreign_keys = 0;
+
+CREATE TABLE sqlitestudio_temp_table AS SELECT *
+                                          FROM equilibre_prod;
+
+DROP TABLE equilibre_prod;
+
+CREATE TABLE equilibre_prod (
+    pays                VARCHAR (25) PRIMARY KEY,
+    code_pays           SMALLINT,
+    annee               DATE,
+    produit             VARCHAR (25) PRIMARY KEY,
+    code_produit        SMALLINT,
+    dispo_int           INT,
+    alim_ani            INT,
+    semences            INT,
+    pertes              INT,
+    transfo             INT,
+    nourriture          INT,
+    autres_utilisations INT
+);
+
+INSERT INTO equilibre_prod (
+                               pays,
+                               code_pays,
+                               annee,
+                               produit,
+                               code_produit,
+                               dispo_int,
+                               alim_ani,
+                               semences,
+                               pertes,
+                               transfo,
+                               nourriture,
+                               autres_utilisations
+                           )
+                           SELECT pays,
+                                  code_pays,
+                                  annee,
+                                  produit,
+                                  code_produit,
+                                  dispo_int,
+                                  alim_ani,
+                                  semences,
+                                  pertes,
+                                  transfo,
+                                  nourriture,
+                                  autres_utilisations
+                             FROM sqlitestudio_temp_table;
+
+DROP TABLE sqlitestudio_temp_table;
+
+PRAGMA foreign_keys = 1;
+
+
+ALTER TABLE equilibre_prod ADD COLUMN id;
+UPDATE equilibre_prod SET id = pays||'-'||produit;	
+
+___________________________________________________
+PRAGMA foreign_keys = 0;
+
+CREATE TABLE sqlitestudio_temp_table AS SELECT *
+                                          FROM sous_nutrition;
+
+DROP TABLE sous_nutrition;
+
+CREATE TABLE sous_nutrition (
+    pays         VARCHAR (25) PRIMARY KEY,
+    code_pays    SMALLINT,
+    année        DATE,
+    nb_personnes INT
+);
+
+INSERT INTO sous_nutrition (
+                               pays,
+                               code_pays,
+                               année,
+                               nb_personnes
+                           )
+                           SELECT pays,
+                                  code_pays,
+                                  année,
+                                  nb_personnes
+                             FROM sqlitestudio_temp_table;
+
+DROP TABLE sqlitestudio_temp_table;
+
+PRAGMA foreign_keys = 1;
