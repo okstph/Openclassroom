@@ -41,6 +41,9 @@ Ce dépôt contient les projets réalisés durant la formation Data Analyst d'Op
 
 ## Projet 6 - Détectez des faux billets
 ### Objectifs
+* Faire une analyse descriptive des billets vrais et faux (largeur, hauteur)
+* Analyser les différences entre les billets vrais et faux via une ACP + classification k-means
+* Construire un modèle de détection des faux billets via la régression logistique
 
 ### Compétences cibles
 * Interpréter une ACP
@@ -50,6 +53,7 @@ Ce dépôt contient les projets réalisés durant la formation Data Analyst d'Op
 
 ## Projet 7 - Effectuez une prédiction de revenus
 ### Objectifs
+
 
 ### Compétences cibles
 * Maîtriser les bases de la statistique inférentielle 
