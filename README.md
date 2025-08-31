@@ -31,10 +31,36 @@ Ce dépôt contient les projets réalisés durant la formation Data Analyst d'Op
 ## Projet 5 - Produisez une étude de marché
 ### Objectifs
 * A partir des données du projet 3, caractériser les pays via la classification CAH avec R
-* 
+* Constuire un dendogram basé sur cette classification
+* Tester l'adéquation de la classification via des tests d'adéquation et de comparaisons
   
 ### Compétences cibles
 * Construire et lire un dendogramme
 * Interpréter une ACP
 * Tester l’adéquation à une loi par un test statistique
 
+## Projet 6 - Détectez des faux billets
+### Objectifs
+
+### Compétences cibles
+* Interpréter une ACP
+* Modéliser grâce à la régression logistique
+* Réaliser une ACP
+* Utiliser un algorithme de clustering de type Kmeans
+
+## Projet 7 - Effectuez une prédiction de revenus
+### Objectifs
+
+### Compétences cibles
+* Maîtriser les bases de la statistique inférentielle 
+* Maîtriser les bases des probabilités
+* Modéliser des données
+
+Projet 8 - Prédisez la demande en électricité
+### Objectifs
+
+### Compétences cibles
+* Maitriser les méthodes de lissage et la méthode de Holt-Winters 
+* Maitriser les notions de composantes et de modèles de décomposition 
+* Maitriser la méthode ARMA
+* Représenter graphiquement une série temporelle
